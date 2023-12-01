@@ -112,7 +112,36 @@ public class Main {
         // U: 20 0
         // C: Mass of Box 2?
         //.... repeat for all boxes
+        Scanner scanner = new Scanner(System.in);
 
+        // Get the number of boxes from the user
+        System.out.print("How many boxes would you like? ");
+        int numBoxes = scanner.nextInt();
+
+        // Create an array of boxes with the specified length
+        Box[] boxes = new Box[numBoxes];
+
+        // Loop to initialize each box
+        for (int i = 0; i < numBoxes; ++i) {
+            boxes[i] = new Box(); // Create a new Box object for each iteration
+
+            // Get user input for each box
+            System.out.print("Mass of box " + (i + 1) + "? ");
+            boxes[i].mass = scanner.nextFloat();
+
+            System.out.print("x and y position of box " + (i + 1) + "? ");
+            boxes[i].position[0] = scanner.nextFloat();
+            boxes[i].position[1] = scanner.nextFloat();
+
+            System.out.print("Velocity of box " + (i + 1) + "? ");
+            boxes[i].velocity[0] = scanner.nextFloat();
+            boxes[i].velocity[1] = scanner.nextFloat();
+        }
+
+        // Your array 'boxes' is now initialized with user input
+
+        // Close the scanner
+        scanner.close();
 
 
         //Main Loop
